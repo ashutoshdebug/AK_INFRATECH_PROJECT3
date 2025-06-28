@@ -85,9 +85,35 @@ function removeFromCart(index) {
 
       renderCart();
 
-      document.getElementById("proceed").addEventListener("click", () => {
-        alert("Proceeding to Buy! (Payment Gateway simulation)");
-      });
+      // document.getElementById("proceed").addEventListener("click", () => {
+      //   alert("Proceeding to Buy! (Payment Gateway simulation)");
+      // });
     
       // 
+
+      document.getElementById("proceed").addEventListener("click", () => {
+  const subtotalText = document.getElementById("subtotal").innerText.replace("Subtotal: ₹", "").replace(/,/g, "");
+
+  if (!subtotalText || subtotalText === "0") {
+    alert("Your cart is empty. Cannot generate QR.");
+    return;
+  }
+
+  const qrData = `https://youtube.com`;
+
+  const qrDiv = document.getElementById("qrcode");
+  qrDiv.innerHTML = "";
+
+  new QRCode(qrDiv, {
+    text: qrData,
+    width: 150,
+    height: 150
+  });
+
+  document.getElementById("custom-alert").style.display = "flex";
+});
+
+document.getElementById("close-alert").addEventListener("click", () => {
+  document.getElementById("custom-alert").style.display = "none";
+});
       
