@@ -258,6 +258,7 @@ footer > *:not(.copyright) {
   align-items: center;
   justify-content: center;
   color: rgb(77, 77, 77);
+  background-color: #4a94b1;
 }
 
 #copyright a {

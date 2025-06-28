@@ -304,6 +304,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #4a94b1;
   color: rgb(77, 77, 77);
 }
 #copyright a {
