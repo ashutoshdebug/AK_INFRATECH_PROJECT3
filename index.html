@@ -28,7 +28,8 @@
           <a href="./">Home</a>
           <a href="checkout.html">Cart</a>
           <a href="notavailable.html">Your Orders</a>
-          <a href="notavailable.html">Account</a>
+          <a href="#" id="side-account-link">Account</a>
+
         </div>
       </div>
 
@@ -355,6 +356,20 @@
       </main>
       <script src="./js/index.js"></script>
       <script src="./js/hamburger.js"></script>
+      <script>
+  const sideAccountLink = document.getElementById("side-account-link");
+
+  sideAccountLink.addEventListener("click", () => {
+    const username = localStorage.getItem("username");
+
+    if (username) {
+      window.location.href = "account.html";
+    } else {
+      window.location.href = "login.html";
+    }
+  });
+</script>
+
     </div>
   </body>
 </html>

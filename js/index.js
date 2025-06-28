@@ -1,8 +1,23 @@
 const accountBtn = document.querySelector(".navbar-items-4");
 
-accountBtn.addEventListener("click", () => {
-  accountBtn.innerText = "Welcome! AK Infratech";
-});
+function updateAccountBtn() {
+  const username = localStorage.getItem("username");
+
+  if (username) {
+    accountBtn.innerHTML = `Welcome! ${username}`;
+    accountBtn.style.cursor = "pointer";
+    accountBtn.onclick = () => {
+      window.location.href = "account.html";
+    };
+  } else {
+    accountBtn.innerHTML = `<a href="login.html">Your Account</a>`;
+    accountBtn.style.cursor = "pointer";
+    accountBtn.onclick = null;
+  }
+}
+
+updateAccountBtn();
+
 
 const products = [
   {

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account - Shoppy</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <style>
+    .panel {
+        width: 50%;
+        min-height: 30vh;
+        border-radius: 10px;
+    }
+
+    @media only screen and (max-width:932px){
+        .panel {
+            width: 95%;
+        }
+
+        .section-name {
+            font-size: 7vw;
+        }
+
+        #account-info {
+            font-size: 5vw !important;
+        }
+
+        #logout-btn {
+            width: 30%;
+            font-size: 4vw !important;
+            margin-bottom: 2vh;
+        }
+    }
+  </style>
+  <body>
+    <div id="main">
+      <header>
+        <nav>
+          <div id="navbar1">
+            <div class="navbar-items-1"><a href="./">Shoppy</a></div>
+            <div class="navbar-items-2" id="pincode-display">Pincode: ------</div>
+            <input type="text" id="pincode-input" placeholder="Enter Pincode" maxlength="6" />
+
+            <div class="navbar-items-3">
+              <label for="shoppy-search">
+                Search
+                <input
+                  type="search"
+                  name="Search Shoppy"
+                  id="shoppy-search"
+                  placeholder="Search Shoppy"
+              /></label>
+            </div>
+            <div class="navbar-items-ham">
+              <div class="hamburger">
+                <div class="ham-lines"></div>
+                <div class="ham-lines"></div>
+                <div class="ham-lines"></div>
+              </div>
+            </div>
+            <div class="navbar-items-4">
+              <a href="account.html">My Account</a>
+            </div>
+            <div class="navbar-items-5">
+              <a href="notavailable.html">Your Orders</a>
+            </div>
+            <div class="navbar-items-6">
+              <a href="checkout.html">Cart</a>
+            </div>
+          </div>
+          <div id="navbar2">
+            <div id="first-div-nav2">
+              <div class="sell second-nav-color">Sell</div>
+              <div class="sell second-nav-color">GST</div>
+              <div class="buyagain second-nav-color">Buy Again</div>
+              <div class="second-navbar-items-2" id="pincode-display-2">
+                Pincode: ------
+              </div>
+              <input
+                type="text"
+                id="pincode-input-2"
+                placeholder="Enter Pincode"
+                maxlength="6"
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section id="main-brand-name">Shoppy</section>
+
+        <section class="second-section">
+          <div class="panel">
+            <div class="section-name">My Account Details</div>
+            <div id="account-info" style="font-size: 2vw; margin-top: 2vh;"></div>
+            <button id="logout-btn" style="
+              margin-top: 4vh;
+              padding: 10px 20px;
+              font-size: 1.2vw;
+              background-color: #2a8ea7;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            ">
+              Logout
+            </button>
+          </div>
+        </section>
+        <footer>
+        <div id="footer-div">
+          <div id="brand-name">Shoppy</div>
+          <div id="connect-with-us">
+            <h4>Connect with us!</h4>
+            <div id="connect-links">
+              <div id="github">
+                <a href="https://github.com/ashutoshdebug" target="_blank">Github</a>
+              </div>
+              <div id="linkedin">
+                <a href="https://linkedin.com/in/ashutosht05" target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div id="help">
+            <h4>Want help?</h4>
+            <div id="help-links">
+              <div id="Account">
+                <a href="notavailable.html" target="_blank">Your Account</a>
+              </div>
+              <div id="Your Orders">
+                <a href="notavailable.html" target="_blank">Your Orders</a>
+              </div>
+              <div id="Cart">
+                <a href="checkout.html" target="_blank">Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="copyright" class="copyright">
+          | All rights reserved by&nbsp;<span><a href="https://linkedin.com/in/ashutosht05" target="_blank">Shoppy</a>&nbsp;|</span>
+        </div>
+      </footer>
+      </main>
+
+      
+    </div>
+
+    <script>
+      const username = localStorage.getItem("username");
+      const accountInfo = document.getElementById("account-info");
+      const logoutBtn = document.getElementById("logout-btn");
+
+      if (!username) {
+        window.location.href = "login.html";
+      } else {
+        accountInfo.innerText = `Welcome, ${username}!`;
+      }
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("username");
+        window.location.href = "index.html";
+      });
+
+      // Pincode setup (reuse your existing logic)
+      function setupPincode(displayId, inputId) {
+        const display = document.getElementById(displayId);
+        const input = document.getElementById(inputId);
+
+        const saved = localStorage.getItem("pincode");
+        if (saved) display.innerText = `Pincode: ${saved}`;
+
+        display.addEventListener("click", () => {
+          input.style.display = "block";
+          input.focus();
+        });
+
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const value = input.value.trim();
+            if (value.length === 6 && /^\d+$/.test(value)) {
+              localStorage.setItem("pincode", value);
+              display.innerText = `Pincode: ${value}`;
+              input.style.display = "none";
+            } else {
+              alert("Please enter a valid 6-digit Pincode.");
+            }
+          }
+        });
+      }
+
+      setupPincode("pincode-display", "pincode-input");
+      setupPincode("pincode-display-2", "pincode-input-2");
+    </script>
+  </body>
+</html>

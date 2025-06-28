@@ -238,12 +238,13 @@ main {
 #pincode-input {
   display: none;
   position: absolute;
-  top: 10vh;
+  top: 15vh;
   left: 50%;
   transform: translateX(-50%);
   padding: 5px;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 20px;
+  border: none;
+  color: black;
 }
 footer > *:not(.copyright) {
   width: 100%;
@@ -334,13 +335,17 @@ footer {
 #pincode-input-2 {
   display: none;
   position: absolute;
-  top: 10vh;
+  top: 15vh;
   left: 50%;
   transform: translateX(-50%);
   padding: 5px;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 20px;
+  border: none;
   color: black;
+}
+
+* :focus{
+  outline:none;
 }
 
 @media only screen and (max-width: 932px) {
@@ -455,6 +460,6 @@ footer {
   }
 
   #footer-div a {
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
 }
