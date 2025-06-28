@@ -117,6 +117,10 @@ function addToRecentlyViewed(product) {
 
 showRecentlyViewed();
 
+window.addEventListener("pageshow", () => {
+  showRecentlyViewed();
+});
+
 // Optional: Clear recently viewed items on page reload
 // Uncomment this block if you want them cleared on reload, not just tab close
 
