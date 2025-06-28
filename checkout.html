@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/checkout.css" />
+    <link rel="stylesheet" href="./css/hamburger.css" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <div id="main">
+      <div id="side-nav">
+        <div id="close-btn">&times;</div>
+        <div class="side-nav-links">
+          <a href="./">Home</a>
+          <a href="checkout.html">Cart</a>
+          <a href="#">Your Orders</a>
+          <a href="#">Account</a>
+        </div>
+      </div>
+      <header>
+        <nav>
+          <div id="navbar1">
+            <div class="navbar-items-1"><a href="./">Shoppy</a></div>
+            <div class="navbar-items-2" id="pincode-display">
+              Pincode: ------
+            </div>
+            <input
+              type="text"
+              id="pincode-input"
+              placeholder="Enter Pincode"
+              maxlength="6"
+            />
+
+            <div class="navbar-items-3">
+              <label for="shoppy-search"
+                >Search
+                <input
+                  type="search"
+                  name="Search Shoppy"
+                  id="shoppy-search"
+                  placeholder="Search Shoppy"
+              /></label>
+            </div>
+            <div class="navbar-items-ham">
+              <div class="hamburger">
+                <div class="ham-lines"></div>
+                <div class="ham-lines"></div>
+                <div class="ham-lines"></div>
+              </div>
+            </div>
+            <div class="navbar-items-4">Account</div>
+            <div class="navbar-items-5">Your Orders</div>
+            <div class="navbar-items-6"><a href="checkout.html">Cart</a></div>
+          </div>
+          <div id="navbar2">
+            <div id="first-div-nav2">
+              <div class="sell second-nav-color">Sell</div>
+              <div class="sell second-nav-color">GST</div>
+              <div class="buyagain second-nav-color">Buy Again</div>
+              <div class="second-navbar-items-2" id="pincode-display-2">
+                Pincode: ------
+              </div>
+              <input
+                type="text"
+                id="pincode-input-2"
+                placeholder="Enter Pincode"
+                maxlength="6"
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div id="both-panel">
+          <div id="main-panel">
+            <div id="product-info">
+              <div id="product-image">
+                <img src="./statics/keyboard.jpg" alt="" />
+              </div>
+              <div id="product-desc">
+                <div id="combined-info">
+                  <div id="item-name">Ashutosh</div>
+                  <div id="in-stock">In Stock</div>
+                  <div id="delivery-date">Get it by 29/06/2025</div>
+                  <div id="quantity">
+                    <select name="quantity" id="select-quantity">
+                      <option value="1">Quantity:1</option>
+                      <option value="2">Quantity:2</option>
+                      <option value="3">Quantity:3</option>
+                      <option value="4">Quantity:4</option>
+                      <option value="5">Quantity:5</option>
+                    </select>
+                  </div>
+                  <div id="remove-from-cart">Remove from Cart!</div>
+                </div>
+              </div>
+              <div id="product-price">1,500</div>
+            </div>
+          </div>
+
+          <div id="checkout-panel">
+            <div id="subtotal"></div>
+            <div id="proceed">Proceed to Buy!</div>
+          </div>
+        </div>
+        <footer id="footer">
+          <div id="footer-div">
+            <div id="brand-name">Shoppy</div>
+            <div id="connect-with-us">
+              <h4>Connect with us!</h4>
+              <div id="connect-links">
+                <div id="github">
+                  <a href="" target="_blank">Github</a>
+                </div>
+                <div id="linkedin">
+                  <a href="" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+            <div id="help">
+              <h4>Want help?</h4>
+              <div id="help-links">
+                <div id="Account">
+                  <a href="" target="_blank">Your Account</a>
+                </div>
+                <div id="Your Orders">
+                  <a href="" target="_blank">Your Orders</a>
+                </div>
+                <div id="Cart">
+                  <a href="" target="_blank">Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="copyright" class="copyright">
+            | All rights reserved by&nbsp;<span
+              ><a href="" target="_blank">Shoppy</a>&nbsp;|</span
+            >
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script>
+if (window.innerWidth <= 932) {
+  const pincodeDisplay2 = document.getElementById("pincode-display-2");
+  const pincodeInput2 = document.getElementById("pincode-input-2");
+
+  // Show stored Pincode if it exists
+  const savedPincode2 = localStorage.getItem("pincode");
+  if (savedPincode2) {
+    pincodeDisplay2.innerText = `Pincode: ${savedPincode2}`;
+  }
+
+  pincodeDisplay2.addEventListener("click", () => {
+    pincodeInput2.style.display = "block";
+    pincodeInput2.focus();
+  });
+
+  pincodeInput2.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const value = pincodeInput2.value.trim();
+      if (value.length === 6 && /^\d+$/.test(value)) {
+        localStorage.setItem("pincode", value);
+        pincodeDisplay2.innerText = `Pincode: ${value}`;
+        pincodeInput2.style.display = "none";
+      } else {
+        alert("Please enter a valid 6-digit Pincode.");
+      }
+    }
+  });
+}
+
+    </script>
+  </body>
+</html>

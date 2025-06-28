@@ -1,0 +1,37 @@
+
+#side-nav {
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100%;
+  background-color: rgb(0, 40, 114);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+#side-nav.active {
+  right: 0;
+}
+
+#close-btn {
+  font-size: 6vw;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.side-nav-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  gap: 20px;
+}
+
+.side-nav-links a {
+  color: white;
+  font-size: 5vw;
+}

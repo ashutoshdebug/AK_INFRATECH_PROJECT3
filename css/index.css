@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-items-6 a,
+.navbar-items-1 a {
+  color: white;
+}
+
+.navbar-items-1 a,
+#main-brand-name,
+#brand-name {
+  font-family: "Patrick Hand";
+}
+
+#navbar1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  background-color: #2a8ea7;
+  min-height: 8vh;
+  font-size: large;
+  font-weight: bold;
+  /* border-radius: 0 0 10px 10px; */
+}
+
+#shoppy-search {
+  width: 20vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: none;
+  padding-left: 3px;
+  margin-left: 5px;
+}
+
+#navbar2 {
+  width: 100vw;
+  background-color: rgb(0, 40, 114);
+  height: 4vh;
+}
+
+#first-div-nav2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.hamburger {
+  height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  display: none;
+}
+
+.ham-lines {
+  background-color: white;
+  width: 20px;
+  height: 2px;
+}
+
+.second-nav-color {
+  color: white;
+}
+
+main {
+  content: "";
+  background: url("../statics/ecommerce_bg.jpg");
+  background-repeat: repeat;
+  object-fit: contain;
+}
+
+#main-brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: white;
+  font-weight: bolder;
+  font-size: 10vh;
+}
+
+.first-section {
+  /* margin-top: 20%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.first-card,
+.second-card,
+.third-card,
+.fourth-card {
+  background: #ffffff;
+  width: 24%;
+  border-radius: 10px;
+  min-height: 70vh;
+}
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card-title {
+  padding: 10px 0 0 10px;
+  font-size: 1.5vw;
+  font-weight: bolder;
+}
+
+.first-row,
+.second-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.first-row img,
+.second-row img {
+  width: 100%;
+}
+
+.first-row-name,
+.second-row-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.deal {
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: 15px;
+  /* height: 30px; */
+  /* width: 50px; */
+  /* padding: 1px; */
+}
+
+.second-section {
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  width: 98%;
+  background-color: white;
+  padding: 10px 0 0 10px;
+  border-radius: 5px;
+}
+
+.section-name {
+  font-size: 1.5vw;
+  font-weight: bolder;
+}
+
+.navbar-items-2 {
+  width: 150px; /* Reserve enough space for "Pincode: 123456" */
+  text-align: center;
+}
+
+.navbar-items-4 {
+  width: 180px; /* Enough for the longer text */
+  text-align: center;
+}
+
+#pincode-input {
+  display: none;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+footer > *:not(.copyright) {
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footer-div {
+  width: 100%;
+  background-color: white;
+  color: white;
+  padding: 10px 0 0 10px;
+  border-radius: 5px;
+  background-color: rgb(74, 148, 177);
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-top: 10vh;
+  /* margin-top: 10vh; */
+}
+
+#footer-div a {
+  color: white;
+  font-size: 1.5vw;
+}
+
+#brand-name {
+  font-size: 3vw;
+  font-weight: bolder;
+}
+
+#connect-with-us {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#connect-links,
+#help-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#help {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(77, 77, 77);
+}
+
+#copyright a {
+  color: rgb(77, 77, 77);
+}
+/* ------ */
+#image-panel {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+
+.second-navbar-items-2 {
+  display: none;
+}
+
+#pincode-input-2 {
+  display: none;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: black;
+}
+
+
+
+@media only screen and (max-width: 932px) {
+  .first-section {
+    flex-direction: column;
+    gap: 5vh;
+  }
+
+  .navbar-items-1 a {
+    font-size: 7vw;
+  }
+
+  .navbar-items-2, .navbar-items-4, .navbar-items-5, .navbar-items-6{
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .second-navbar-items-2 {
+    display: block;
+    color: white;
+  }
+
+  #first-div-nav2 {
+    width: 100%;
+  }
+
+  .first-card,
+  .second-card,
+  .third-card,
+  .fourth-card {
+    width: 95%;
+  }
+  .card-title,
+  .section-name {
+    font-size: 5vw;
+  }
+  .panel {
+    width: 95%;
+  }
+
+  #image-panel {
+    flex-direction: column;
+    /* overflow-y: scroll ; */
+  }
+
+  .recently-viewed-img {
+    width: 50% !important;
+  }
+
+  #footer-div {
+    flex-direction: column;
+  }
+
+  #brand-name {
+    font-size: 13vw;
+  }
+
+  #connect-with-us,
+  #help {
+    gap: 1vh;
+    margin-top: 2vh;
+  }
+
+  #connect-with-us > *:not(h4),
+  #help > *:not(h4) {
+    flex-direction: row;
+  }
+
+  #footer-div a {
+    font-size: 3vh;
+  }
+}
