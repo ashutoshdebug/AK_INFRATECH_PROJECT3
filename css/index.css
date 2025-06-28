@@ -45,7 +45,7 @@ a {
 
 #navbar2 {
   width: 100vw;
-  background-color: rgb(0, 40, 114);
+  background-color: #3bb2cf;
   height: 4vh;
 }
 
@@ -186,6 +186,11 @@ main {
   text-align: center;
 }
 
+.navbar-items-4 a,
+.navbar-items-5 a {
+  color: white;
+}
+
 #pincode-input {
   display: none;
   position: absolute;
@@ -285,8 +290,6 @@ footer > *:not(.copyright) {
   color: black;
 }
 
-
-
 @media only screen and (max-width: 932px) {
   .first-section {
     flex-direction: column;
@@ -297,7 +300,10 @@ footer > *:not(.copyright) {
     font-size: 7vw;
   }
 
-  .navbar-items-2, .navbar-items-4, .navbar-items-5, .navbar-items-6{
+  .navbar-items-2,
+  .navbar-items-4,
+  .navbar-items-5,
+  .navbar-items-6 {
     display: none;
   }
 

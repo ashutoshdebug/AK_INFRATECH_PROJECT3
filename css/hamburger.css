@@ -5,7 +5,7 @@
   right: -70%;
   width: 70%;
   height: 100%;
-  background-color: rgb(0, 40, 114);
+  background-color: #34a0bb;
   color: white;
   display: flex;
   flex-direction: column;
@@ -33,5 +33,5 @@
 
 .side-nav-links a {
   color: white;
-  font-size: 5vw;
+  font-size: 6vw;
 }

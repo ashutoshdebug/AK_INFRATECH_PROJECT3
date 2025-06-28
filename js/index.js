@@ -5,22 +5,110 @@ accountBtn.addEventListener("click", () => {
 });
 
 const products = [
-  { name: "Useless Speaker-I", price: "1,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "speaker1.jpg" },
-  { name: "Useless Speaker-II", price: "2,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "speaker2.jpg" },
-  { name: "Useless Speaker-III", price: "1,499", desc: "Lorem ipsum dolor sit amet consectetur...", image: "speaker1.jpg" },
-  { name: "Useless Speaker-IV", price: "2,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "speaker2.jpg" },
-  { name: "Useless Keyboard-I", price: "999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "keyboard.jpg" },
-  { name: "Useless Keyboard-II", price: "799", desc: "Lorem ipsum dolor sit amet consectetur...", image: "keyboard1.jpg" },
-  { name: "Useless Keyboard-III", price: "1,199", desc: "Lorem ipsum dolor sit amet consectetur...", image: "keyboard.jpg" },
-  { name: "Useless Keyboard-IV", price: "1,499", desc: "Lorem ipsum dolor sit amet consectetur...", image: "keyboard1.jpg" },
-  { name: "Useless Monitor-I", price: "11,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "monitor.jpg", deal: "Limited Offer!", strikethrough: "15,999" },
-  { name: "Useless Monitor-II", price: "10,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "monitor1.jpg", deal: "Limited Offer!", strikethrough: "16,999" },
-  { name: "Useless Monitor-III", price: "9,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "monitor2.jpg", deal: "Limited Offer!", strikethrough: "13,999" },
-  { name: "Useless Monitor-IV", price: "8,999", desc: "Lorem ipsum dolor sit amet consectetur...", image: "monitor3.jpg", deal: "Limited Offer!", strikethrough: "10,999" },
-  { name: "Useless Mouse-I", price: "599", desc: "Lorem ipsum dolor sit amet consectetur...", image: "mouse1.jpg" },
-  { name: "Useless Mouse-II", price: "899", desc: "Lorem ipsum dolor sit amet consectetur...", image: "mouse3.jpg" },
-  { name: "Useless Mouse-III", price: "699", desc: "Lorem ipsum dolor sit amet consectetur...", image: "monitor1.jpg" },
-  { name: "Useless Mouse-IV", price: "499", desc: "Lorem ipsum dolor sit amet consectetur...", image: "mouse3.jpg" },
+  {
+    name: "Useless Speaker-I",
+    price: "1,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "speaker1.jpg",
+  },
+  {
+    name: "Useless Speaker-II",
+    price: "2,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "speaker2.jpg",
+  },
+  {
+    name: "Useless Speaker-III",
+    price: "1,499",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "speaker1.jpg",
+  },
+  {
+    name: "Useless Speaker-IV",
+    price: "2,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "speaker2.jpg",
+  },
+  {
+    name: "Useless Keyboard-I",
+    price: "999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "keyboard.jpg",
+  },
+  {
+    name: "Useless Keyboard-II",
+    price: "799",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "keyboard1.jpg",
+  },
+  {
+    name: "Useless Keyboard-III",
+    price: "1,199",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "keyboard.jpg",
+  },
+  {
+    name: "Useless Keyboard-IV",
+    price: "1,499",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "keyboard1.jpg",
+  },
+  {
+    name: "Useless Monitor-I",
+    price: "11,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "monitor.jpg",
+    deal: "Limited Offer!",
+    strikethrough: "15,999",
+  },
+  {
+    name: "Useless Monitor-II",
+    price: "10,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "monitor1.jpg",
+    deal: "Limited Offer!",
+    strikethrough: "16,999",
+  },
+  {
+    name: "Useless Monitor-III",
+    price: "9,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "monitor2.jpg",
+    deal: "Limited Offer!",
+    strikethrough: "13,999",
+  },
+  {
+    name: "Useless Monitor-IV",
+    price: "8,999",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "monitor3.jpg",
+    deal: "Limited Offer!",
+    strikethrough: "10,999",
+  },
+  {
+    name: "Useless Mouse-I",
+    price: "599",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "mouse1.jpg",
+  },
+  {
+    name: "Useless Mouse-II",
+    price: "899",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "mouse3.jpg",
+  },
+  {
+    name: "Useless Mouse-III",
+    price: "699",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "monitor1.jpg",
+  },
+  {
+    name: "Useless Mouse-IV",
+    price: "499",
+    desc: "Lorem ipsum dolor sit amet consectetur...",
+    image: "mouse3.jpg",
+  },
 ];
 
 const searchInput = document.getElementById("shoppy-search");
@@ -35,9 +123,17 @@ searchInput.addEventListener("keydown", (e) => {
     if (foundProduct) {
       addToRecentlyViewed(foundProduct);
 
-      let url = `product.html?name=${encodeURIComponent(foundProduct.name)}&price=${foundProduct.price}&desc=${encodeURIComponent(foundProduct.desc)}&image=${encodeURIComponent(foundProduct.image)}`;
-      if (foundProduct.deal) url += `&deal=${encodeURIComponent(foundProduct.deal)}`;
-      if (foundProduct.strikethrough) url += `&strikethrough=${encodeURIComponent(foundProduct.strikethrough)}`;
+      let url = `product.html?name=${encodeURIComponent(
+        foundProduct.name
+      )}&price=${foundProduct.price}&desc=${encodeURIComponent(
+        foundProduct.desc
+      )}&image=${encodeURIComponent(foundProduct.image)}`;
+      if (foundProduct.deal)
+        url += `&deal=${encodeURIComponent(foundProduct.deal)}`;
+      if (foundProduct.strikethrough)
+        url += `&strikethrough=${encodeURIComponent(
+          foundProduct.strikethrough
+        )}`;
 
       window.location.href = url;
     } else {
@@ -97,9 +193,14 @@ function showRecentlyViewed() {
     img.addEventListener("click", () => {
       addToRecentlyViewed(product);
 
-      let url = `product.html?name=${encodeURIComponent(product.name)}&price=${product.price}&desc=${encodeURIComponent(product.desc)}&image=${encodeURIComponent(product.image)}`;
+      let url = `product.html?name=${encodeURIComponent(product.name)}&price=${
+        product.price
+      }&desc=${encodeURIComponent(product.desc)}&image=${encodeURIComponent(
+        product.image
+      )}`;
       if (product.deal) url += `&deal=${encodeURIComponent(product.deal)}`;
-      if (product.strikethrough) url += `&strikethrough=${encodeURIComponent(product.strikethrough)}`;
+      if (product.strikethrough)
+        url += `&strikethrough=${encodeURIComponent(product.strikethrough)}`;
 
       window.location.href = url;
     });
@@ -111,8 +212,13 @@ function showRecentlyViewed() {
 function addToRecentlyViewed(product) {
   const recent = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
   recent.unshift(product);
-  const uniqueRecent = Array.from(new Map(recent.map(p => [p.name, p])).values());
-  localStorage.setItem("recentlyViewed", JSON.stringify(uniqueRecent.slice(0, 5)));
+  const uniqueRecent = Array.from(
+    new Map(recent.map((p) => [p.name, p])).values()
+  );
+  localStorage.setItem(
+    "recentlyViewed",
+    JSON.stringify(uniqueRecent.slice(0, 5))
+  );
 }
 
 showRecentlyViewed();

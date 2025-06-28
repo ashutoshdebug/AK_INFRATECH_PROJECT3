@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="./css/checkout.css" />
     <link rel="stylesheet" href="./css/hamburger.css" />
-    <title>Document</title>
+    <title>Your Cart</title>
   </head>
   <style></style>
   <body>
@@ -27,8 +27,8 @@
         <div class="side-nav-links">
           <a href="./">Home</a>
           <a href="checkout.html">Cart</a>
-          <a href="#">Your Orders</a>
-          <a href="#">Account</a>
+          <a href="notavailable.html">Your Orders</a>
+          <a href="notavailable.html">Account</a>
         </div>
       </div>
       <header>
@@ -62,8 +62,12 @@
                 <div class="ham-lines"></div>
               </div>
             </div>
-            <div class="navbar-items-4">Account</div>
-            <div class="navbar-items-5">Your Orders</div>
+            <div class="navbar-items-4">
+              <a href="notavailable.html">Account</a>
+            </div>
+            <div class="navbar-items-5">
+              <a href="notavailable.html">Your Orders</a>
+            </div>
             <div class="navbar-items-6"><a href="checkout.html">Cart</a></div>
           </div>
           <div id="navbar2">
@@ -117,12 +121,12 @@
             <div id="proceed">Proceed to Buy!</div>
           </div>
           <div id="custom-alert">
-  <div id="custom-alert-content">
-    <h3>Scan to Pay</h3>
-    <div id="qrcode"></div>
-    <button id="close-alert">Close</button>
-  </div>
-</div>
+            <div id="custom-alert-content">
+              <h3>Scan to Pay</h3>
+              <div id="qrcode"></div>
+              <button id="close-alert">Close</button>
+            </div>
+          </div>
         </div>
         <footer id="footer">
           <div id="footer-div">
@@ -131,10 +135,14 @@
               <h4>Connect with us!</h4>
               <div id="connect-links">
                 <div id="github">
-                  <a href="" target="_blank">Github</a>
+                  <a href="https://github.com/ashutoshdebug" target="_blank"
+                    >Github</a
+                  >
                 </div>
                 <div id="linkedin">
-                  <a href="" target="_blank">LinkedIn</a>
+                  <a href="https://linkedin.com/in/ashutosht05" target="_blank"
+                    >LinkedIn</a
+                  >
                 </div>
               </div>
             </div>
@@ -142,20 +150,22 @@
               <h4>Want help?</h4>
               <div id="help-links">
                 <div id="Account">
-                  <a href="" target="_blank">Your Account</a>
+                  <a href="notavailable.html" target="_blank">Your Account</a>
                 </div>
                 <div id="Your Orders">
-                  <a href="" target="_blank">Your Orders</a>
+                  <a href="notavailable.html" target="_blank">Your Orders</a>
                 </div>
                 <div id="Cart">
-                  <a href="" target="_blank">Cart</a>
+                  <a href="checkout.html'" target="_blank">Cart</a>
                 </div>
               </div>
             </div>
           </div>
           <div id="copyright" class="copyright">
             | All rights reserved by&nbsp;<span
-              ><a href="" target="_blank">Shoppy</a>&nbsp;|</span
+              ><a href="https://linkedin.com/in/ashutosht05" target="_blank"
+                >Shoppy</a
+              >&nbsp;|</span
             >
           </div>
         </footer>
@@ -166,37 +176,35 @@
     <script src="./js/product.js"></script>
     <script src="./js/hamburger.js"></script>
     <script>
-if (window.innerWidth <= 932) {
-  const pincodeDisplay2 = document.getElementById("pincode-display-2");
-  const pincodeInput2 = document.getElementById("pincode-input-2");
+      if (window.innerWidth <= 932) {
+        const pincodeDisplay2 = document.getElementById("pincode-display-2");
+        const pincodeInput2 = document.getElementById("pincode-input-2");
 
-  // Show stored Pincode if it exists
-  const savedPincode2 = localStorage.getItem("pincode");
-  if (savedPincode2) {
-    pincodeDisplay2.innerText = `Pincode: ${savedPincode2}`;
-  }
+        // Show stored Pincode if it exists
+        const savedPincode2 = localStorage.getItem("pincode");
+        if (savedPincode2) {
+          pincodeDisplay2.innerText = `Pincode: ${savedPincode2}`;
+        }
 
-  pincodeDisplay2.addEventListener("click", () => {
-    pincodeInput2.style.display = "block";
-    pincodeInput2.focus();
-  });
+        pincodeDisplay2.addEventListener("click", () => {
+          pincodeInput2.style.display = "block";
+          pincodeInput2.focus();
+        });
 
-  pincodeInput2.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const value = pincodeInput2.value.trim();
-      if (value.length === 6 && /^\d+$/.test(value)) {
-        localStorage.setItem("pincode", value);
-        pincodeDisplay2.innerText = `Pincode: ${value}`;
-        pincodeInput2.style.display = "none";
-      } else {
-        alert("Please enter a valid 6-digit Pincode.");
+        pincodeInput2.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const value = pincodeInput2.value.trim();
+            if (value.length === 6 && /^\d+$/.test(value)) {
+              localStorage.setItem("pincode", value);
+              pincodeDisplay2.innerText = `Pincode: ${value}`;
+              pincodeInput2.style.display = "none";
+            } else {
+              alert("Please enter a valid 6-digit Pincode.");
+            }
+          }
+        });
       }
-    }
-  });
-}
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-
   </body>
 </html>

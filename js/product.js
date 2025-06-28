@@ -31,6 +31,8 @@ document.getElementById("product-price-2").innerText = `₹${price}`;
 document.querySelector("#product-division-1 img").src = `statics/${image}`;
 document.getElementById("about-product").childNodes[2].textContent = desc;
 
+document.title = `${name} | Shoppy`;
+
 const dealDiv = document.getElementById("deal");
 dealDiv.style.display = deal ? "block" : "none";
 if (deal) dealDiv.innerText = deal;
@@ -51,7 +53,7 @@ addToCartBtn.addEventListener("click", () => {
     image,
     quantity,
     deal: deal || "",
-    strikethrough: strikethrough || ""
+    strikethrough: strikethrough || "",
   };
 
   const cart = JSON.parse(sessionStorage.getItem("cart")) || [];

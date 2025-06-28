@@ -26,6 +26,11 @@ a {
   text-align: center;
 }
 
+.navbar-items-4 a, .navbar-items-5 a {
+  color: white;
+}
+
+
 #navbar1 {
   display: flex;
   align-items: center;
@@ -49,7 +54,7 @@ a {
 
 #navbar2 {
   width: 100vw;
-  background-color: rgb(0, 40, 114);
+  background-color: #3bb2cf;
   height: 4vh;
 }
 
@@ -344,6 +349,14 @@ footer {
   flex-direction: column;
   gap: 10px;
   min-width: 250px;
+}
+
+#close-alert {
+  background-color: #ffd814;
+  text-decoration: none;
+  border: none;
+  width: 10vw;
+  border-radius: 10px;
 }
 
  
