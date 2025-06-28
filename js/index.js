@@ -82,7 +82,7 @@ setupPincode("pincode-display-2", "pincode-input-2");
 const imagePanel = document.getElementById("image-panel");
 
 function showRecentlyViewed() {
-  const recent = JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
+  const recent = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
   imagePanel.innerHTML = "";
 
   recent.forEach((product) => {
@@ -109,16 +109,25 @@ function showRecentlyViewed() {
 }
 
 function addToRecentlyViewed(product) {
-  const recent = JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
-  recent.unshift(product); 
+  const recent = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+  recent.unshift(product);
   const uniqueRecent = Array.from(new Map(recent.map(p => [p.name, p])).values());
-  sessionStorage.setItem("recentlyViewed", JSON.stringify(uniqueRecent.slice(0, 5))); 
+  localStorage.setItem("recentlyViewed", JSON.stringify(uniqueRecent.slice(0, 5)));
 }
 
 showRecentlyViewed();
 
-window.addEventListener("pageshow", () => {
-  showRecentlyViewed();
+// Catch when page becomes visible again or restored from cache
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    showRecentlyViewed();
+  }
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    showRecentlyViewed();
+  }
 });
 
 // Optional: Clear recently viewed items on page reload
