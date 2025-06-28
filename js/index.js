@@ -177,7 +177,7 @@ pincodeInput.addEventListener("keydown", (e) => {
 const imagePanel = document.getElementById("image-panel");
 
 function showRecentlyViewed() {
-  const recent = JSON.parse(sessionStorage.getItem("recentlyViewed")) || [];
+  const recent = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
   imagePanel.innerHTML = ""; // Clear existing
 
   recent.forEach((product) => {
