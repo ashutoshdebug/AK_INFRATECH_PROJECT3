@@ -9,16 +9,11 @@ function calculateSubtotal() {
   const quantitySelects = document.querySelectorAll(".select-quantity");
 
   priceElements.forEach((priceEl, index) => {
-    // Remove commas before parsing
     const priceString = priceEl.getAttribute("data-price").replace(/,/g, "");
     const price = parseFloat(priceString);
     const quantity = parseInt(quantitySelects[index].value);
 
-    if (quantity === 1) {
-      subtotal += price;
-    } else {
-      subtotal += price * quantity;
-    }
+    subtotal += price * quantity;
   });
 
   subtotalDiv.innerText = `Subtotal: ₹${subtotal.toLocaleString()}`;
@@ -47,34 +42,24 @@ function renderCart() {
           <div id="delivery-date">Get it by 29/06/2025</div>
           <div id="quantity">
             <select name="quantity" class="select-quantity">
-              <option value="1" ${
-                product.quantity == 1 ? "selected" : ""
-              }>Quantity:1</option>
-              <option value="2" ${
-                product.quantity == 2 ? "selected" : ""
-              }>Quantity:2</option>
-              <option value="3" ${
-                product.quantity == 3 ? "selected" : ""
-              }>Quantity:3</option>
-              <option value="4" ${
-                product.quantity == 4 ? "selected" : ""
-              }>Quantity:4</option>
-              <option value="5" ${
-                product.quantity == 5 ? "selected" : ""
-              }>Quantity:5</option>
+              ${[1, 2, 3, 4, 5]
+                .map(
+                  (q) =>
+                    `<option value="${q}" ${
+                      product.quantity == q ? "selected" : ""
+                    }>Quantity:${q}</option>`
+                )
+                .join("")}
             </select>
           </div>
           <div class="remove-from-cart" style="margin-top:10px; color:red; cursor:pointer;">Remove from Cart!</div>
         </div>
       </div>
-      <div id="product-price" class="price" data-price="${product.price}">₹${
-      product.price
-    }</div>
+      <div id="product-price" class="price" data-price="${product.price}">₹${product.price}</div>
     `;
 
     mainPanel.appendChild(productInfo);
 
-    // Add event listener to remove button
     productInfo
       .querySelector(".remove-from-cart")
       .addEventListener("click", () => {
@@ -82,23 +67,22 @@ function renderCart() {
       });
   });
 
-  const quantitySelects = document.querySelectorAll(".select-quantity");
-  quantitySelects.forEach((select) => {
+  document.querySelectorAll(".select-quantity").forEach((select) => {
     select.addEventListener("change", calculateSubtotal);
   });
 
   calculateSubtotal();
 }
+
 function removeFromCart(index) {
-  cart.splice(index, 1); // Remove item from cart array
-  sessionStorage.setItem("cart", JSON.stringify(cart)); // Update sessionStorage
-  renderCart(); // Re-render cart
+  cart.splice(index, 1);
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
 }
 
 renderCart();
 
 // Proceed Logic
-
 document.getElementById("proceed").addEventListener("click", () => {
   const subtotalText = document
     .getElementById("subtotal")
@@ -111,7 +95,6 @@ document.getElementById("proceed").addEventListener("click", () => {
   }
 
   const qrData = `https://youtube.com/shorts/1VPJMIHQ5WU?si=0nN_sZ8WJKKknrb7`;
-
   const qrDiv = document.getElementById("qrcode");
   qrDiv.innerHTML = "";
 
@@ -127,3 +110,29 @@ document.getElementById("proceed").addEventListener("click", () => {
 document.getElementById("close-alert").addEventListener("click", () => {
   document.getElementById("custom-alert").style.display = "none";
 });
+
+
+// Account/Login Logic
+const username = localStorage.getItem("username");
+
+// Navbar Account Link
+const navbarAccount = document.querySelector(".navbar-items-4 a");
+if (username) {
+  navbarAccount.innerText = `Welcome, ${username}`;
+  navbarAccount.href = "account.html";
+} else {
+  navbarAccount.innerText = "Account";
+  navbarAccount.href = "login.html";
+}
+
+// Side-nav Account Link (if exists)
+const sideNavAccount = document.querySelector("#Account a");
+if (sideNavAccount) {
+  if (username) {
+    sideNavAccount.innerText = `Welcome, ${username}`;
+    sideNavAccount.href = "account.html";
+  } else {
+    sideNavAccount.innerText = "Account";
+    sideNavAccount.href = "login.html";
+  }
+}

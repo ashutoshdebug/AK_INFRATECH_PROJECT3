@@ -26,10 +26,10 @@ a {
   text-align: center;
 }
 
-.navbar-items-4 a, .navbar-items-5 a {
+.navbar-items-4 a,
+.navbar-items-5 a {
   color: white;
 }
-
 
 #navbar1 {
   display: flex;
@@ -180,6 +180,7 @@ main {
 #delivery-date {
   font-size: 1.5vw;
   margin-top: 2vh;
+  font-weight: bolder;
 }
 
 #select-quantity {
@@ -194,7 +195,7 @@ main {
   background-color: #ffd814;
   /* color: white; */
   /* font-weight: bolder; */
-  min-width: 10vw;
+  min-width: 13vw;
   max-width: 50vw;
   display: flex;
   align-items: center;
@@ -214,7 +215,6 @@ main {
   width: 150px; /* Reserve enough space for "Pincode: 123456" */
   text-align: center;
 }
-
 
 #pincode-input {
   display: none;
@@ -240,8 +240,8 @@ main {
   color: black;
 }
 
-* :focus{
-  outline:none;
+* :focus {
+  outline: none;
 }
 
 footer > *:not(.copyright) {
@@ -338,7 +338,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -364,9 +364,11 @@ footer {
   border-radius: 10px;
 }
 
- 
-
-
+.select-quantity {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 2vh;
+}
 
 @media only screen and (max-width: 932px) {
   #first-div-nav2 {
@@ -447,7 +449,8 @@ footer {
   }
 
   #proceed {
-    width: 80%;
+    min-width: 70%;
+    max-width: 80%;
     background-color: #ffd814;
   }
 

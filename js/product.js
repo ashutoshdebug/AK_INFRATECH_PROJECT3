@@ -34,7 +34,7 @@ document.getElementById("about-product").childNodes[2].textContent = desc;
 document.title = `${name} | Shoppy`;
 
 const dealDiv = document.getElementById("deal");
-dealDiv.style.display = deal ? "block" : "none";
+dealDiv.style.display = deal ? "flex" : "none";
 if (deal) dealDiv.innerText = deal;
 
 const strikeDiv = document.getElementById("strikethroughprice");
