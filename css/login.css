@@ -1,0 +1,40 @@
+body {
+  background: url("./statics/ecommerce_bg.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  background-repeat: repeat;
+}
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+}
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #2a8ea7;
+}
+.login-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.login-box button {
+  padding: 10px 20px;
+  background-color: #2a8ea7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.error-msg {
+  color: red;
+  margin-top: 10px;
+}

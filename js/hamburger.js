@@ -1,4 +1,4 @@
-//
+// Hamburger logic for responsiveness
 const hamburger = document.querySelector(".hamburger");
 const sideNav = document.getElementById("side-nav");
 const closeBtn = document.getElementById("close-btn");

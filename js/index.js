@@ -157,7 +157,7 @@ searchInput.addEventListener("keydown", (e) => {
   }
 });
 
-// Pincode Logic (Shared across pages)
+// Pincode Logic
 
 function setupPincode(displayId, inputId) {
   const display = document.getElementById(displayId);
@@ -188,7 +188,7 @@ function setupPincode(displayId, inputId) {
 setupPincode("pincode-display", "pincode-input");
 setupPincode("pincode-display-2", "pincode-input-2");
 
-// Recently Viewed Panel with sessionStorage
+// Recently Viewed Panel with sessionStorage so that I can display the products
 
 const imagePanel = document.getElementById("image-panel");
 
@@ -238,7 +238,6 @@ function addToRecentlyViewed(product) {
 
 showRecentlyViewed();
 
-// Catch when page becomes visible again or restored from cache
 window.addEventListener("pageshow", (e) => {
   if (e.persisted) {
     showRecentlyViewed();
@@ -251,9 +250,3 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-// Optional: Clear recently viewed items on page reload
-// Uncomment this block if you want them cleared on reload, not just tab close
-
-// window.addEventListener("beforeunload", () => {
-//   sessionStorage.removeItem("recentlyViewed");
-// });

@@ -1,3 +1,4 @@
+// Cart Logic
 const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 const mainPanel = document.getElementById("main-panel");
 const subtotalDiv = document.getElementById("subtotal");
@@ -96,11 +97,7 @@ function removeFromCart(index) {
 
 renderCart();
 
-// document.getElementById("proceed").addEventListener("click", () => {
-//   alert("Proceeding to Buy! (Payment Gateway simulation)");
-// });
-
-//
+// Proceed Logic
 
 document.getElementById("proceed").addEventListener("click", () => {
   const subtotalText = document

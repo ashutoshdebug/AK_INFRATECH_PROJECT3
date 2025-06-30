@@ -41,7 +41,7 @@ const strikeDiv = document.getElementById("strikethroughprice");
 strikeDiv.style.display = strikethrough ? "block" : "none";
 if (strikethrough) strikeDiv.innerHTML = `<del>₹${strikethrough}</del>`;
 
-// Add to Cart Logic
+// Add to Cart Logic for check out
 const addToCartBtn = document.getElementById("cart");
 
 addToCartBtn.addEventListener("click", () => {
@@ -63,7 +63,7 @@ addToCartBtn.addEventListener("click", () => {
   alert("Item added to cart!");
 });
 
-// ✅ Recently Viewed Logic using localStorage (persistent)
+// Recently Viewed Logic using localStorage (Let's see which will work!)
 if (name && price && desc && image) {
   const product = { name, price, desc, image, deal, strikethrough };
 
