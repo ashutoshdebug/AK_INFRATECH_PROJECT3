@@ -1,5 +1,5 @@
 body {
-  background: url("./statics/ecommerce_bg.jpg");
+  background: url("../statics/ecommerce_bg.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
